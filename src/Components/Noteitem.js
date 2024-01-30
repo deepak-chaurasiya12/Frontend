@@ -14,7 +14,7 @@ const Noteitem = (props) => {
   const handleColorChange = async (selectedColor) => {
     try {
       // Send a request to update the note's color on the server
-      const response = await fetch(`/api/notes/updatenote/${note._id}`, {
+      const response = await fetch(`https://backend-jet-two.vercel.app/api/notes/updatenote/${note._id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
