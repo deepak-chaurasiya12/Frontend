@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 const NoteState = (props) => {
 
-  const host = "http://localhost:5000"
+  const host = "https://backend-jet-two.vercel.app"
 
   const noteInitial = []
   const userInitial = JSON.parse(localStorage.getItem("user")) || null; // Assuming user data is an object
