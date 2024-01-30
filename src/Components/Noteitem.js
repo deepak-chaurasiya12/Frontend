@@ -16,8 +16,8 @@ const Noteitem = (props) => {
     setColor(selectedColor);
     setShowColorPicker(false);
     // Save the color to localStorage
-    // Save the color to localStorage
-  localStorage.setItem(`noteColor-${note._id}`, selectedColor);
+    // Update the color of the note in the backend
+    updateNote(selectedColor);
 
   };
 
