@@ -11,14 +11,31 @@ const Noteitem = (props) => {
 
 
 
-  const handleColorChange = (selectedColor) => {
-    console.log("Setting color:", selectedColor);
-    setColor(selectedColor);
-    setShowColorPicker(false);
-    // Save the color to localStorage
-    localStorage.setItem(`noteColor-${note._id}`, selectedColor);
-
+  const handleColorChange = async (selectedColor) => {
+    try {
+      // Send a request to update the note's color on the server
+      const response = await fetch(`/api/notes/updatenote/${note._id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': localStorage.getItem('token') // Add your authorization token if required
+        },
+        body: JSON.stringify({ color: selectedColor })
+      });
+  
+      if (!response.ok) {
+        throw new Error('Failed to update color');
+      }
+  
+      // Update the color in the frontend
+      setColor(selectedColor);
+      setShowColorPicker(false);
+    } catch (error) {
+      console.error('Error updating color:', error.message);
+      // Handle error
+    }
   };
+  
 
   const handleCardClick = (e) => {
     // Check if the click originated from the color picker input
