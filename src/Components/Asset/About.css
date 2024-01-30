@@ -1,0 +1,31 @@
+
+body{
+    background-color: aqua;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+
+}
+
+.img-fluid {
+    height: 360px;
+}
+
+/* About.css */
+
+/* Default styles */
+
+@media screen and (max-width: 768px) {
+    .img-fluid {
+      height: auto;
+      max-width: 100%;
+    }
+  
+    .py-md-5 {
+      padding: 2rem;
+    }
+  
+    /* Add more specific styles as needed for smaller screens */
+  }
+  

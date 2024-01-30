@@ -1,0 +1,15 @@
+.footer {
+    background-color: #0a4275;
+    color: white;
+    padding: 1rem;
+    width: 100%; /* Set width to 100% */
+    position: relative; /* Keep the footer fixed at the bottom */
+    top: 300px; /* Align the footer to the bottom of the viewport */
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .footer {
+        position: relative; /* Change position to relative for smaller screens */
+        padding: 0.5rem;
+    }
+}

@@ -1,0 +1,53 @@
+.sign-box{
+    background-color: darkorange;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 6px;
+    max-width: 410px;
+    margin: 0 auto;
+    padding: 30px; /* Adjusted padding for better spacing */
+    border: 2px solid white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sign-sen{
+    font-size: 15px;
+    margin: 20px auto;
+}
+
+.sign-box input,
+.sign-box button{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+ /* Media query for smaller screens, like mobile phones */
+@media screen and (max-width: 600px){
+    .sign-box{
+        padding: 20px; /* Adjusted padding for smaller screens */
+    }
+
+    .sign-sen{
+        font-size: 14px; /* Adjust font size for smaller screens */
+        margin: 15px auto; /* Adjust margin for smaller screens */
+        
+    }
+    
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px){
+    .sign-box{
+        max-width: 80%;
+    }
+
+    .sign-sen{
+        font-size: 16px; /* Adjust font size for smaller screens */
+        margin: 15px auto; /* Adjust margin for smaller screens */
+        
+    }
+    
+}

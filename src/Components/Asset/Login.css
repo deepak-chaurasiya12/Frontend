@@ -1,0 +1,57 @@
+.login-box {
+    background-color: darkorange;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 150px;
+    max-width: 410px;
+    margin: 0 auto;
+    padding: 30px; /* Adjusted padding for better spacing */
+    border: 2px solid white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-box .icon {
+    margin-bottom: 10px;
+  }
+  
+  .login-box input,
+  .login-box button {
+    width: 100%; /* Make input and button take 100% width */
+    margin-bottom: 20px;
+  }
+  
+  .Login-sen {
+    font-size: 18px; /* Adjust font size for better visibility */
+    margin: 20px 0; /* Add margin to separate h2 from other elements */
+    text-align: center;
+  }
+
+  /* Media query for smaller screens, like mobile phones */
+@media screen and (max-width: 600px) {
+    .login-box {
+      padding: 20px; /* Adjusted padding for smaller screens */
+    }
+  
+    .Login-sen {
+      font-size: 14px; /* Adjust font size for smaller screens */
+      margin: 15px, auto;
+     
+    }
+  }
+  
+  /* Media query for larger screens, like tablets */
+  @media screen and (min-width: 601px) and (max-width: 1024px) {
+    .login-box {
+      max-width: 80%; /* Adjusted max-width for larger screens */
+    }
+
+    .Login-sen {
+      font-size: 16px; /* Adjust font size for smaller screens */
+      margin: 15px, auto;
+    }
+  }
+  
