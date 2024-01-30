@@ -17,8 +17,6 @@ const Noteitem = (props) => {
     setShowColorPicker(false);
     // Save the color to localStorage
     localStorage.setItem(`noteColor-${note._id}`, selectedColor);
-  // Prevent event propagation to avoid opening the edit section
-  e.stopPropagation();
 
   };
 
