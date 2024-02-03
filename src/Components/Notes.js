@@ -47,6 +47,23 @@ const Notes = (props) => {
 
   }
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('https://backend-jet-two.vercel.app/api/notes/fetchallnotes', {
+          headers: {
+            "auth-token": token, // Include your user authentication token here
+          }
+        });
+        const data = await response.json();
+        setNotes(data); // Set the fetched notes, including color information
+      } catch (error) {
+        console.error("Error fetching notes:", error);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <>
       <AddNote showAlert={props.showAlert}/>

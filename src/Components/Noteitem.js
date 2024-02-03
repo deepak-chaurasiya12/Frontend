@@ -11,14 +11,28 @@ const Noteitem = (props) => {
 
 
 
-  const handleColorChange = (selectedColor) => {
-    console.log("Setting color:", selectedColor);
-    setColor(selectedColor);
-    setShowColorPicker(false);
-    // Save the color to localStorage
-    localStorage.setItem(`noteColor-${note._id}`, selectedColor);
-
+  const handleColorChange = async (selectedColor) => {
+    try {
+      setColor(selectedColor);
+      setShowColorPicker(false);
+  
+      // Send a request to update the note color
+      await fetch(`https://backend-jet-two.vercel.app/api/notes/updatenote/${note._id}`, {
+        method: 'PUT',
+        headers: {
+          "Content-Type": "application/json",
+            "auth-token": token, // Include your user authentication token here
+        },
+        body: JSON.stringify({ color: selectedColor })
+      });
+  
+      // Save the color to localStorage (optional)
+      localStorage.setItem(`noteColor-${note._id}`, selectedColor);
+    } catch (error) {
+      console.error("Error updating note color:", error);
+    }
   };
+  
 
   const handleCardClick = (e) => {
     // Check if the click originated from the color picker input
